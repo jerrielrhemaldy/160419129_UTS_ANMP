@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/itemHome">
+
+    <fragment
+        android:id="@+id/itemHome"
+        android:name="com.ubaya.a160419129_uts_library.view.LibraryListFragment"
+        android:label="fragment_library_list"
+        tools:layout="@layout/fragment_library_list" >
+        <action
+            android:id="@+id/actionLibraryDetail"
+            app:destination="@id/libraryDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/libraryDetailFragment"
+        android:name="com.ubaya.a160419129_uts_library.view.LibraryDetailFragment"
+        android:label="fragment_library_detail"
+        tools:layout="@layout/fragment_library_detail" >
+        <action
+            android:id="@+id/actionLibraryList"
+            app:destination="@id/itemHome" />
+        <argument
+            android:name="idBook"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemFavorite"
+        android:name="com.ubaya.a160419129_uts_library.view.LibraryFavoritFragment"
+        android:label="fragment_library_favorit"
+        tools:layout="@layout/fragment_library_favorit" />
+    <fragment
+        android:id="@+id/itemProfile"
+        android:name="com.ubaya.a160419129_uts_library.view.LibraryProfileFragment"
+        android:label="fragment_library_profile"
+        tools:layout="@layout/fragment_library_profile" >
+        <action
+            android:id="@+id/actionAboutLibrary"
+            app:destination="@id/libraryAboutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/libraryAboutFragment"
+        android:name="com.ubaya.a160419129_uts_library.view.LibraryAboutFragment"
+        android:label="fragment_library_about"
+        tools:layout="@layout/fragment_library_about" />
+</navigation>
